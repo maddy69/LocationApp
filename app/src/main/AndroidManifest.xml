@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.locationapp">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LocationApp">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/Activity2" />
+
+        <activity
+            android:name=".Activity2"
+            android:exported="false"
+            android:label="@string/title_activity_2"
+            android:theme="@style/Theme.LocationApp.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.LocationApp.NoActionBar"
+            tools:ignore="ExtraText,RedundantLabel">
+            <uses-permission
+                android:name="android.permission.ACCESS_FINE_LOCATION"
+                tools:ignore="ManifestOrder,WrongManifestParent" />
+            <uses-permission
+                android:name="android.permission. ACCESS_COARSE_LOCATION"
+                tools:ignore="WrongManifestParent" />
+            <uses-permission
+                android:name="android.permission.INTERNET"
+                tools:ignore="WrongManifestParent" />
+            try {
+            if
+            (ContextCompat.checkSelfPermission(getApplicationContext()
+            ,
+            android.manifest.permission.ACCESS_FINE_LOCATION) !=
+            PackageManager.Permission_GRANTED) {
+
+            ActivityCompat.requestPermissions(this, new
+            String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+            }
+            } catch (Exception e){
+            e.printStackTrace();
+            }
+
+            {
+            GPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            }
+
+            {
+            GPSManager.java
+            }
+            {
+            GpsStatus.Listener
+            }
+            {
+            GPSCallback.java
+            public interface GPSCallback
+            {
+            public abstract void onGPSUpdate(Location location);
+            }
+            }
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
